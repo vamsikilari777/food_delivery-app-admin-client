@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const API_URL = 'http://localhost:8080/api/foods';
-const API_URL = 'VITE_API_URL=https://food-delivery-app-server-w0i3.onrender.com/api/foods';
+const API_URL = 'https://food-delivery-app-server-w0i3.onrender.com/api/foods';
 
 export const addFood = async (foodData, image) => {
     const formData = new FormData();

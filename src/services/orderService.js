@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const API_URL = "http://localhost:8080/api/orders";
-const API_URL = "VITE_API_URL=https://food-delivery-app-server-w0i3.onrender.com/api/orders";
+const API_URL = "https://food-delivery-app-server-w0i3.onrender.com/api/orders";
 
 
 export const fetchAllOrders = async () => {

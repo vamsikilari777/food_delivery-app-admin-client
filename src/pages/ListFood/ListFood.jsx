@@ -6,7 +6,7 @@ import { deleteFood, getFoodList } from "../../services/foodService";
 
 const ListFood = () => {
   // const BASE_URL = "http://localhost:8080";
-  const BASE_URL = "VITE_API_URL=https://food-delivery-app-server-w0i3.onrender.com";
+  const BASE_URL = "https://food-delivery-app-server-w0i3.onrender.com";
   const [list, setList] = useState([]);
   const fetchList = async () => {
     try {
