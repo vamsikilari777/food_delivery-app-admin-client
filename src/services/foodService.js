@@ -1,7 +1,5 @@
-import axios from "axios";
 
-// const API_URL = 'http://localhost:8080/api/foods';
-const API_URL = 'https://food-delivery-app-server-w0i3.onrender.com/api/foods';
+import api from "../api/Axios"
 
 export const addFood = async (foodData, image) => {
     const formData = new FormData();
@@ -9,7 +7,7 @@ export const addFood = async (foodData, image) => {
     formData.append('file', image); 
 
     try {
-        await axios.post(API_URL+"/add", formData, {headers: { "Content-Type": "multipart/form-data"}});
+        await api.post("/api/foods/add", formData, {headers: { "Content-Type": "multipart/form-data"}});
     } catch (error) {
         console.log('Error', error);
         throw error;
@@ -18,7 +16,7 @@ export const addFood = async (foodData, image) => {
 
 export const getFoodList = async () => {
     try {
-        const response = await axios.get(API_URL+"/foods-list");
+        const response = await api.get("/api/foods/foods-list");
         console.log("foodList data :", response);
         return response.data;
     } catch (error) {
@@ -29,7 +27,7 @@ export const getFoodList = async () => {
 
 export const deleteFood = async (foodId) => {
     try {
-        const response = await axios.delete(API_URL+"/"+foodId);
+        const response = await api.delete("/api/foods/"+foodId);
         return response;
     } catch (error) {
         console.log('Error while deleting the food.', error);
